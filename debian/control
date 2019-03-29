@@ -3,5 +3,4 @@ Section: base
 Priority: optional
 Depends: libxml2, libusb-1.0-0
 Maintainer: Max Wittal <max.wittal@automyinc.com>
-Description: Automy basic package
-Architecture: all
+Description: A vision library for genicam based cameras

@@ -2,14 +2,15 @@
 
 VERSION=$(cat VERSION)
 ARCH=$(uname -m)
-DST=libaravis-$VERSION-$ARCH
+DIST=$(cat ~/DIST)
+DST=libaravis-$VERSION-$ARCH-$DIST
 
 rm -rf $DST
 mkdir -p $DST/DEBIAN
 mkdir -p $DST/usr
-mkdir -p $ARCH
 
-echo "Version: $VERSION" >> $DST/DEBIAN/control
+echo "Version: $VERSION" > $DST/DEBIAN/control
+cat $ARCH/debian/control >> $DST/DEBIAN/control
 cat debian/control >> $DST/DEBIAN/control
 
 ./make_install.sh --prefix=$PWD/$DST/usr
